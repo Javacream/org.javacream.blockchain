@@ -2,9 +2,11 @@ package org.javacream.blockchain;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.ObjectUtils;
 
 public class Block implements Serializable{
 
@@ -19,9 +21,9 @@ public class Block implements Serializable{
 		this.parentBlockHash = ArrayUtils.clone(parentBlockHash);
 		this.data = ArrayUtils.clone(data);
 		this.timestamp = System.currentTimeMillis();
-		this.blockHash = toHash(parentBlockHash, data, Long.toString(timestamp).getBytes());
+		this.blockHash = this.toHash();
 	}
-
+	
 	public byte[] getParentBlockHash() {
 		return parentBlockHash;
 	}
@@ -50,7 +52,14 @@ public class Block implements Serializable{
 		dataAndHash = ArrayUtils.addAll(dataAndHash, data2);
 		dataAndHash = ArrayUtils.addAll(dataAndHash, data3);
 		return DigestUtils.md5(dataAndHash);
-		
+	}
+	private byte[] toHash() {
+		return Block.toHash(parentBlockHash, data, Long.toString(timestamp).getBytes());
+	}
+	public void selfCheck() {
+		if (!Objects.deepEquals(this.blockHash, toHash())){
+			throw new IllegalStateException("invalid block");
+		}
 	}
 
 }

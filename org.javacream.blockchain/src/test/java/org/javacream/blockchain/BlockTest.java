@@ -3,7 +3,7 @@ package org.javacream.blockchain;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BlockTests {
+public class BlockTest {
 	private static final byte[] TEST_DATA = "Test".getBytes();
 	private static final byte[] TEST_DATA2 = "Test2".getBytes();
 	private static final byte[] TEST_PARENT_HASH = "Hash".getBytes();

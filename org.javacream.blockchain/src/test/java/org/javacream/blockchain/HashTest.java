@@ -4,7 +4,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class HashTests {
+public class HashTest {
 	private static final int EXPECTED_HASH_SIZE = 32;
 	private final String HASH_FOR_A = "7fc56270e7a70fa81a5935b72eacbe29";
 	private final String HASH_FOR_THOUSAND_AS = "0f53217fc7c8e7f89e8a8558e64a7083";
