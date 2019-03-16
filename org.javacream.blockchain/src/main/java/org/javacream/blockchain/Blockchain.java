@@ -1,6 +1,5 @@
 package org.javacream.blockchain;
 
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -9,10 +8,10 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class Blockchain implements Serializable{
+public class Blockchain{
+
 	private static final String BEGIN = "##BEGIN##";
 	private static final String END = "++END++";
-	private static final long serialVersionUID = 1l;
 	
 	private LinkedList<Block> blockchain;
 	

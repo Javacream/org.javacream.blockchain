@@ -1,16 +1,12 @@
 package org.javacream.blockchain;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.ObjectUtils;
 
-public class Block implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+public class Block{
 
 	private byte[] parentBlockHash;
 	private byte[] blockHash;
