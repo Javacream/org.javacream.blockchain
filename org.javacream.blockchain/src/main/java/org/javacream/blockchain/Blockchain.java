@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class Blockchain{
+public final class Blockchain{
 
 	private static final String BEGIN = "##BEGIN##";
 	private static final String END = "++END++";

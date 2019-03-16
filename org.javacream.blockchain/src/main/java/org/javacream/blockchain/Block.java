@@ -6,7 +6,7 @@ import java.util.Objects;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
-public class Block{
+public final class Block{
 
 	private byte[] parentBlockHash;
 	private byte[] blockHash;
