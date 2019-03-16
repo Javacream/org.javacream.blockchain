@@ -34,7 +34,7 @@ public class BlockchainTest {
 		blockchain.validateBlocks();
 	}
 	@Test
-	public void blockchainIsValis() {
+	public void blockchainIsValid() {
 		blockchain.validateBlockchain();
 	}
 	@Test
