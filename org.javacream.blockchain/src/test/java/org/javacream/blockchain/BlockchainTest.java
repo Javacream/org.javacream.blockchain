@@ -30,8 +30,12 @@ public class BlockchainTest {
 		Assert.assertTrue(5 == blockchain.size());
 	}
 	@Test
-	public void blockchainIsValid() {
-		blockchain.validateChain();
+	public void blockchainBlocksAreValid() {
+		blockchain.validateBlocks();
+	}
+	@Test
+	public void blockchainIsValis() {
+		blockchain.validateBlockchain();
 	}
 	@Test
 	public void secondDataIsData1() {

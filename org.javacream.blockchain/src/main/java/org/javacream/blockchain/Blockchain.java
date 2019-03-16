@@ -3,6 +3,7 @@ package org.javacream.blockchain;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -50,9 +51,19 @@ public class Blockchain implements Serializable{
 		}
 	}
 
-	public void validateChain() {
+	public void validateBlocks() {
 		for (Block block: blockchain) {
 			block.selfCheck();
+		}
+	}
+	public void validateBlockchain() {
+		for (int i = 0; i < blockchain.size() - 1; i++) {
+			Block parent = blockchain.get(i);
+			Block block = blockchain.get(i+1);
+			if (!Objects.deepEquals(block.getParentBlockHash(), parent.getBlockHash())){
+				throw new IllegalArgumentException("invalid chain");
+			}
+			
 		}
 	}
 }
