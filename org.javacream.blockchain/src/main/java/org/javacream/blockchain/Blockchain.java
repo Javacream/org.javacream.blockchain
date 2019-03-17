@@ -60,7 +60,7 @@ public final class Blockchain{
 			Block parent = blockchain.get(i);
 			Block block = blockchain.get(i+1);
 			if (!Objects.deepEquals(block.getParentBlockHash(), parent.getBlockHash())){
-				throw new IllegalArgumentException("invalid chain");
+				throw new IllegalStateException("invalid chain");
 			}
 			
 		}
